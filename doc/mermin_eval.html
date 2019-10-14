@@ -1,0 +1,270 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Mermin evaluation &#8212; A sage package to study entanglement in the Grover algorithm 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/MathJax.js?config=TeX-AMS_HTML-full,../mathjax_sage.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Vector to Ket" href="vector_to_ket.html" />
+    <link rel="prev" title="Optimization" href="opti.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="vector_to_ket.html" title="Vector to Ket"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="opti.html" title="Optimization"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A sage package to study entanglement in the Grover algorithm 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-mermin_eval">
+<span id="mermin-evaluation"></span><h1>Mermin evaluation<a class="headerlink" href="#module-mermin_eval" title="Permalink to this headline">¶</a></h1>
+<p>This module is a SageMath module aimed at computing Mermin operators optimized 
+to detect a specific quantum state.</p>
+<dl class="function">
+<dt id="mermin_eval.M">
+<code class="descclassname">mermin_eval.</code><code class="descname">M</code><span class="sig-paren">(</span><em>n</em>, <em>a</em>, <em>a_prime</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mermin_eval.html#M"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mermin_eval.M" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>M_n is defined as such:</dt>
+<dd>M_n = (1/2)*(M_(n-1).tensor(a + a’) + M’_(n-1).tensor(a - a’))</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – iteration for the Mermin operator (determines its size)</li>
+<li><strong>a</strong><strong>,</strong><strong>a_prime</strong> (<em>matrix</em>) – size 2 hermitian operators, defining M as
+given above</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">matrix – a size 2^n operator, following the definition given 
+above.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mermin_eval.M_eval">
+<code class="descclassname">mermin_eval.</code><code class="descname">M_eval</code><span class="sig-paren">(</span><em>a</em>, <em>b</em>, <em>c</em>, <em>m</em>, <em>p</em>, <em>q</em>, <em>phi</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mermin_eval.html#M_eval"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mermin_eval.M_eval" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>This function evaluates &lt;<em>phi*|M|*phi</em>&gt; with <em>(a,b,c,m,p,q)</em> describing </dt>
+<dd><p class="first">M, the Mermin operator (M_n in fact).</p>
+<p class="last">M_n traditionally uses two families of operators, a_n and a’_n, in our 
+case, a_n = a*X+b*Y+c*Z and a’_n = m*X+p*Y+q*Z.</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong><strong>,</strong><strong>b</strong><strong>,</strong><strong>c</strong><strong>,</strong><strong>m</strong><strong>,</strong><strong>p</strong><strong>,</strong><strong>q</strong> (<em>real</em>) – coefficients for the Mermin operator, used as 
+described above.</li>
+<li><strong>phi</strong> (<em>vector</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#complex" title="(in Python v3.7)"><em>complex</em></a><em>]</em>) – vector to be evaluated with M</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">complex</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mermin_eval.M_from_coef">
+<code class="descclassname">mermin_eval.</code><code class="descname">M_from_coef</code><span class="sig-paren">(</span><em>n</em>, <em>a</em>, <em>b</em>, <em>c</em>, <em>m</em>, <em>p</em>, <em>q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mermin_eval.html#M_from_coef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mermin_eval.M_from_coef" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Returns the Mermin operator for a given size <em>n</em> and coefficients <em>a</em> </dt>
+<dd><p class="first">through <em>q</em>.</p>
+<p class="last">M traditionally uses two families of operators, a_n and a’_n, in our 
+case, a_n = a*X+b*Y+c*Z and a’_n = m*X+p*Y+q*Z.</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – iteration for the Mermin operator (determines its size)</li>
+<li><strong>a</strong><strong>,</strong><strong>b</strong><strong>,</strong><strong>c</strong><strong>,</strong><strong>m</strong><strong>,</strong><strong>p</strong><strong>,</strong><strong>q</strong> (<em>real</em>) – coefficients for the Mermin operator, used as described 
+above.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">matrix – the Mermin operator M_n</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mermin_eval.M_prime">
+<code class="descclassname">mermin_eval.</code><code class="descname">M_prime</code><span class="sig-paren">(</span><em>n</em>, <em>a</em>, <em>a_prime</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mermin_eval.html#M_prime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mermin_eval.M_prime" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>M’_n is defined as such:</dt>
+<dd>M’_n = (1/2)*(M’_(n-1).tensor(a + a’) + M_(n-1).tensor(a’ - a))</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – iteration for the Mermin operator (determines its size)</li>
+<li><strong>a</strong><strong>,</strong><strong>a_prime</strong> (<em>matrix</em>) – size 2 hermitian operators, defining M as
+given above</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">matrix – a size 2^n operator, following the definition given 
+above.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mermin_eval.mermin_coef_opti">
+<code class="descclassname">mermin_eval.</code><code class="descname">mermin_coef_opti</code><span class="sig-paren">(</span><em>target_state</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mermin_eval.html#mermin_coef_opti"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mermin_eval.mermin_coef_opti" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Mermin operator maximizing the measure for a given input.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>target_state_vector</strong> (<em>vector</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>]</em>) – state searched by Grover’s algorithm (only 
+single item searches are supported for now)</li>
+<li><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – if <em>verbose</em> then extra run information will be displayed in 
+terminal</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">matrix – the optimal Mermin operator for <em>target_state</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="mermin_eval.mermin_operator_opti">
+<code class="descclassname">mermin_eval.</code><code class="descname">mermin_operator_opti</code><span class="sig-paren">(</span><em>target_state_vector</em>, <em>precomputed_filename=None</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mermin_eval.html#mermin_operator_opti"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mermin_eval.mermin_operator_opti" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the pseudo optimal operator used to perform the Mermin evaluation 
+during Grover’s algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>target_state_vector</strong> (<em>vector</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>]</em>) – state searched by Grover’s algorithm (only 
+single item searches are supported for now)</li>
+<li><strong>precomputed_filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – file where the precomputed coefficients for 
+optimal Mermin operator are stored, if left empty,  precomputation will
+not be used. If precomputation is used and the searched state is not in 
+this database, once the optimization done, the result will be added to 
+the file.</li>
+<li><strong>verbose</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – if <em>verbose</em> then extra run information will be displayed in 
+terminal</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">matrix – the Mermin operator satisfying the required conditions</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="opti.html"
+                        title="previous chapter">Optimization</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="vector_to_ket.html"
+                        title="next chapter">Vector to Ket</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mermin_eval.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="vector_to_ket.html" title="Vector to Ket"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="opti.html" title="Optimization"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A sage package to study entanglement in the Grover algorithm 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Henri de Boutray.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>

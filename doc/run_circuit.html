@@ -1,0 +1,264 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Run circuit &#8212; A sage package to study entanglement in the Grover algorithm 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/MathJax.js?config=TeX-AMS_HTML-full,../mathjax_sage.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Optimization" href="opti.html" />
+    <link rel="prev" title="Grover main" href="grover.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="opti.html" title="Optimization"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="grover.html" title="Grover main"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A sage package to study entanglement in the Grover algorithm 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-run_circuit">
+<span id="run-circuit"></span><h1>Run circuit<a class="headerlink" href="#module-run_circuit" title="Permalink to this headline">¶</a></h1>
+<p>This module provides a simple quantum circuit simulator.</p>
+<dl class="function">
+<dt id="run_circuit.digit">
+<code class="descclassname">run_circuit.</code><code class="descname">digit</code><span class="sig-paren">(</span><em>n</em>, <em>k</em>, <em>base=10</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/run_circuit.html#digit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#run_circuit.digit" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Computes the digit <em>i</em> for the integer <em>k</em> in its representation in base</dt>
+<dd><em>base</em></dd>
+<dt>Example:</dt>
+<dd><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">digit</span><span class="p">(</span><span class="mi">152</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digit</span><span class="p">(</span><span class="mi">152</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – The integer for which the digit is needed</li>
+<li><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – The number of the digit</li>
+<li><strong>base</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – The base used for the representation of <em>n</em></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int – The <em>k*^th digit of *n</em> in base <em>base</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="run_circuit.int_name">
+<code class="descclassname">run_circuit.</code><code class="descname">int_name</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/run_circuit.html#int_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#run_circuit.int_name" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Converts a number to a string composed of the list of its digits in </dt>
+<dd>English.</dd>
+<dt>Example:</dt>
+<dd><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">int_name</span><span class="p">(</span><span class="mi">152</span><span class="p">)</span>
+<span class="go">&#39;onefivetwo&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – number to be converted to a list of digits</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">str – list of digits of <em>num</em> in base 10 concatenated</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="run_circuit.kronecker">
+<code class="descclassname">run_circuit.</code><code class="descname">kronecker</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/run_circuit.html#kronecker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#run_circuit.kronecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the Kronecker product of <em>a</em> and <em>b</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>a</strong><strong>,</strong><strong>b</strong> (<em>matrix</em><em>,</em><em>vector</em>) – operands for the kronecker operator.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">matrix <em>or</em> vector –  the kronecker product of <em>a</em> and <em>b</em> 
+(return type is the same a type of <em>a</em>).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="run_circuit.kronecker_power">
+<code class="descclassname">run_circuit.</code><code class="descname">kronecker_power</code><span class="sig-paren">(</span><em>a</em>, <em>n</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/run_circuit.html#kronecker_power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#run_circuit.kronecker_power" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the <em>n*^th Kronecker power of *a</em>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> (<em>matrix</em><em>,</em><em>vector</em>) – the matrix (or vector) to be elevated to the <em>n</em>^th power.</li>
+<li><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – the power <em>a</em> has to be elevated to.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>matrix</em> or <em>vector</em> – the <em>n*^th kronecker power of *a</em> (return 
+type is the same a type of <em>a</em>).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="run_circuit.output_commant">
+<code class="descclassname">run_circuit.</code><code class="descname">output_commant</code><span class="sig-paren">(</span><em>command_name</em>, <em>command</em>, <em>output</em>, <em>output_to_file</em>, <em>w_file</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/run_circuit.html#output_commant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#run_circuit.output_commant" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>This function is used to print usefull informations in various ways,</dt>
+<dd>see arguments details for more information.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>command_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – the command name</li>
+<li><strong>command</strong> (<em>any</em>) – the command content (if <em>string</em>, will be printed as 
+such; if <em>vector</em>, <em>vector_to_ket</em> will be called on it and if 
+<em>matrix</em>, <em>latex</em> method from SageMath will be called on it)</li>
+<li><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – disables or enables the output</li>
+<li><strong>output_to_file</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – whether the output should be in the standard 
+output or in a file</li>
+<li><strong>w_file</strong> (<em>file</em>) – the opened file to write the output to</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="run_circuit.run">
+<code class="descclassname">run_circuit.</code><code class="descname">run</code><span class="sig-paren">(</span><em>matrix_layers</em>, <em>V_init</em>, <em>output</em>, <em>output_file</em>, <em>file=None</em>, <em>vector_name='V'</em>, <em>matrix_name='M'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/run_circuit.html#run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#run_circuit.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the algorithm specified by the matrix_layers</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>matrix_layers</strong> (<em>array</em><em>[</em><em>array</em><em>[</em><em>matrix</em><em>]</em><em>]</em>) – algorithm described as it would 
+be in a circuit</li>
+<li><strong>V_init</strong> (<em>vector</em>) – initial input of the algorithm</li>
+<li><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – if true, outputs are enabled</li>
+<li><strong>output_to_file</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – true, trace is returned in file, else it is 
+printed</li>
+<li><strong>file</strong> (<em>file</em>) – file to output the commands to</li>
+<li><strong>vector_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – name used for the vectors commands</li>
+<li><strong>matrix_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – name used for the matrices commands</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">vector – the outpu vector</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="grover.html"
+                        title="previous chapter">Grover main</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="opti.html"
+                        title="next chapter">Optimization</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/run_circuit.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="opti.html" title="Optimization"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="grover.html" title="Grover main"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">A sage package to study entanglement in the Grover algorithm 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Henri de Boutray.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>
