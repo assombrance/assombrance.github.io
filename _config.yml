@@ -3,4 +3,4 @@ description: This page is for now a test
 
 markdown: kramdown
 theme: jekyll-theme-slate
-include: doc/_static
+include: ["doc/_static/", "doc/_modules/", "doc/_sources/"]
