@@ -3,5 +3,5 @@ description: This page is for now a test
 
 markdown: kramdown
 theme: jekyll-theme-hacker
-include: ["_test.md"]
+include: "_test.md"
 
