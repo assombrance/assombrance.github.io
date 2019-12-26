@@ -2,6 +2,6 @@ title: Assombrance Anderson personal page
 description: This page is for now a test
 
 markdown: kramdown
-theme: jekyll-theme-slate
+theme: jekyll-theme-hacker
 include: ["_test.md"]
 
