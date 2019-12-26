@@ -3,4 +3,4 @@ description: This page is for now a test
 
 markdown: kramdown
 theme: jekyll-theme-hacker
-include: ["test/_test.md"]
+include: ["test/_test.md", "_testouille.md"]
