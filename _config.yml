@@ -3,5 +3,5 @@ description: This page is for now a test
 
 markdown: kramdown
 theme: jekyll-theme-slate
-include: ["/doc/_static/README.md", "doc/_modules/", "doc/_sources/"]
+include: ["/doc/_static/README.md", "doc/_modules/", "doc/_sources/", "_test.md"]
 
