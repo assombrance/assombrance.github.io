@@ -1,1 +1,1 @@
-include: ["_static/"]
+include: ["_static/", "_test.md"]
