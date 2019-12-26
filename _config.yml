@@ -3,6 +3,6 @@ description: This page is for now a test
 
 markdown: kramdown
 theme: jekyll-theme-hacker
-include: ["_test/"]
+include: ["_test/test.md"]
 includes: ["doc/_static/"]
 
